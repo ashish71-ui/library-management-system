@@ -1,0 +1,10 @@
+
+<html>
+    <body>
+        <h1>Student Profile</h1>
+        <p>Username: {{ student_profile.user.username }}</p>
+        <p>Student ID: {{ student_profile.student_id }}</p>
+        <p>Student faculty: {{ student_profile.faculty }}</p>
+        <a href="{% url 'myapp:update_student_id' %}">Update Student ID</a>
+</html>
+    </body>

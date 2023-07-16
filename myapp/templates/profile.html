@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Student Profile</h1>
+<p>Username: {{ student_profile.user.username }}</p>
+        <p>Student ID: {{ student_profile.student_id }}</p>
+        <p>Student faculty: {{ student_profile.faculty }}</p>
+<!-- Display other profile fields as necessary -->
+<a href="{% url 'myapp:update_student_id' %}">Update Student ID</a>
+{% endblock %}

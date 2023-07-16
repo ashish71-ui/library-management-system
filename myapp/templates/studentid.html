@@ -1,0 +1,22 @@
+<h1>Student Profile</h1>
+<p>Username: {{ student_profile.user.username }}</p>
+<p>Student ID: {{ student_profile.student_id }}</p>
+<p>Faculty: {{ student_profile.Faculty }}</p>
+<p>Batch: {{ student_profile.Batch }}</p>
+{% if student_profile.image2 %}
+    <img src="{{ student_profile.image2.url }}" alt="Profile Image">
+{% else %}
+    <p>No image available.</p>
+{% endif %}
+
+<hr>
+
+
+    <form method="post" enctype="multipart/form-data" action="{% url 'myapp:update_student_id' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Update Student ID</button>
+    </form>
+
+    
+

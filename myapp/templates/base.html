@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src='https://cdn.tailwindcss.com'></script>
+  <title> {% block title %}  welcome {% endblock  %}  |   HTML Heading Template</title>
+</head>
+<body>
+    
+    <nav class="bg-red-800 ">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
+          <div class="flex items-center justify-between h-16">
+            <div class="flex items-center">
+              <div class="flex-shrink-0">
+                {% comment %} <a href="{% url 'item:new' %}" class="text-white font-bold text-xl">New Item</a> {% endcomment %}
+              </div>
+              <div class="hidden md:block">
+                <div class="ml-10 flex items-baseline space-x-4 font-bold">
+{% comment %} {% if request.user.is_authenticated%} {% endcomment %}
+<a href="{% url 'myapp:index'%}" class="text-orange-500 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Index</a>
+{% comment %} <a href="{% url 'dashboard:index' %}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Dash</a> {% endcomment %}
+{% comment %} {% else %} {% endcomment %}
+
+                  <a href="{% url 'myapp:login'%}" class="text-orange-500 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Log in</a>
+                  <a href="{% url 'myapp:signup'%}" class="text-orange-500 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Student signup</a>
+                 {% comment %} {% endif %} {% endcomment %}
+                 <a href="admin" class="text-orange-500 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Librarian login</a>
+                  <a href="{% url 'myapp:profile'%}" class="text-orange-500 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Profile</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      
+      {% block content %}
+      <h1>This is a Heading</h1>
+      {% endblock %}
+      <footer class="fixed bottom-0 left-0 w-full bg-gray-800 text-white p-4">
+        <div class="container mx-auto">
+          <p class="text-center">© 2023 Library Management System. All rights reserved.</p>
+        </div>
+      </footer>
+      
+</body>
+</html>

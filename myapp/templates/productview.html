@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src='https://cdn.tailwindcss.com'></script>
+  <title> {% block title %}  welcome {% endblock  %}  |products page</title>
+</head>
+<body>
+    <div class="bg-white rounded-lg shadow-md p-4 w-150 h-200 hover:bg-blue-100">
+        <!-- Product card content goes here -->
+        <img src="/media/{{i.image}}" alt="" class="w-100 h-40 object-cover rounded-lg mb-4">
+        <h2 class="text-xl font-semibold mb-2">{{i.book_name}}</h2>
+        
+      <h2 class="text-xl font-semibold mb-2">Category:{{ i.category }}</h2>
+      <blockquote class="italic text-gray-500 border-l-4 border-gray-300 pl-4">
+        {{ i.desc }}
+      </blockquote>
+       
+      <a href="{% url 'myapp:request'  %}"> 
+        <button class="bg-green-500 hover:bg-green-400 text-white font-bold py-2 px-4 rounded mt-5">
+          Get this Book
+        </button>
+      </a>
+        
+      </div>
+      
+    </body>

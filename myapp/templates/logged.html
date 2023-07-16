@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content%}
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    {% for i in product %}
+    <div class="bg-white rounded-lg shadow-md p-4 w-120 h-100 hover:bg-blue-100">
+      <!-- Product card content goes here -->
+      <img src="{{ i.image.url }}" alt="" class="w-100 h-40 object-cover rounded-lg mb-4">
+      <h2 class="text-xl font-semibold mb-2">{{ i.book_name }}</h2>
+      
+      <a href="{% url 'myapp:products' i.id %}"> 
+        <button class="bg-red-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-5">
+          Show Detail
+        </button>
+      </a>
+    </div>
+    
+
+    {% endfor %}
+  </div>
+  
+  
+  
+  
+
+
+
+
+{% endblock%}

@@ -1,0 +1,11 @@
+<h1>Book Request List</h1>
+
+{% if book_requests %}
+  <ul>
+    {% for book_request in book_requests %}
+      <li>{{ book_request.book }} - {{ book_request.requested_date }}</li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>No book requests found.</p>
+{% endif %}
